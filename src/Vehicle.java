@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public abstract class Vehicle implements Taxable,Comparable<Vehicle> {
+public abstract class Vehicle implements Taxable, Comparable<Vehicle> {
     protected String id;
     protected String brand;
     protected int year;

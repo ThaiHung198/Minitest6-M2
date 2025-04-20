@@ -26,7 +26,7 @@ public class Car extends Vehicle implements Taxable {
 
     @Override
     public double calculateTax() {
-      return this.numberOfSeats * 300.0;
+        return this.numberOfSeats * 300.0;
     }
 
     @Override

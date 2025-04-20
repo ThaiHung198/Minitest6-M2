@@ -47,10 +47,10 @@ public class Main {
                     case 0:
                         System.out.println("đang thoát chương trình...");
                         break;
-                        default:
-                            System.out.println("(!) Lựa chọn không hợp lệ.Vui lòng chọn từ 0->8");
+                    default:
+                        System.out.println("(!) Lựa chọn không hợp lệ.Vui lòng chọn từ 0->8");
                 }
-            }else {
+            } else {
                 System.out.println("(!) Lỗi: vui lòng nhập số nguyên");
                 sc.nextLine();// đọc bỏ dòng nhập k hợp lệ
                 choice = -1;// đặt lại choice về giá trị k hợp lệ để vòng lặp menu đc tiếp tục
@@ -59,10 +59,11 @@ public class Main {
                 System.out.print("\n(Nhấn Enter để tiếp tục...)");
                 sc.nextLine();
             }
-        }while (choice != 0);
+        } while (choice != 0);
         System.out.println("chương trình kết thúc rồi, bye");
         sc.close();
     }
+
     public static void displayMenu() {
         System.out.println("\n======MENU QUẢN LÝ PHƯƠNG TIỆN======");
         System.out.println("1. Thêm phương tiện");
@@ -76,10 +77,11 @@ public class Main {
         System.out.println("0. Thoát");
         System.out.println("======================================");
     }
+
     public static void addVehicleUI(Scanner sc, VehicleManager manager) {
         System.out.println("\n---Thêm phương tiện");
         // sd hàm getInputInt
-        int typeChoice = getInputInt(sc,"Chọn loại xe(1: Motorbike, 2: Car): ",1,2);
+        int typeChoice = getInputInt(sc, "Chọn loại xe(1: Motorbike, 2: Car): ", 1, 2);
         System.out.print("Nhập ID:");
         String idInput = sc.nextLine();
         if (idInput == null || idInput.trim().isEmpty()) {
@@ -97,14 +99,15 @@ public class Main {
         int year = getInputInt(sc, "Nhập Năm sản xuất (ví dụ: " + currentYear + "): ", 1900, currentYear + 1);
         Vehicle newVehicle = null;
         if (typeChoice == 1) {
-            int power = getInputInt(sc,"Nhập Công suất động cơ(Engine Power): ",1,10000);
+            int power = getInputInt(sc, "Nhập Công suất động cơ(Engine Power): ", 1, 10000);
             newVehicle = new Motorbike(id, brand, year, power);
         } else {
-            int seats = getInputInt(sc,"Nhập số chỗ ngồi(Seats): ",1,100);
+            int seats = getInputInt(sc, "Nhập số chỗ ngồi(Seats): ", 1, 100);
             newVehicle = new Car(id, brand, year, seats);
         }
         manager.addVehicle(newVehicle);
     }
+
     public static void removeVehicleUI(Scanner sc, VehicleManager manager) {
         System.out.println("\n--- Xóa phương tiện ---");
         System.out.println("Nhập ID của phương tiện cần xóa: ");
@@ -114,8 +117,9 @@ public class Main {
         }
         manager.removeVehicle(idToRemote);
     }
+
     public static int getInputInt(Scanner sc, String label, int min, int max) {
-        int value = min -1;
+        int value = min - 1;
         boolean validInput = false;
         while (!validInput) {
             System.out.print(label);

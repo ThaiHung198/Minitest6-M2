@@ -24,7 +24,7 @@ public class Motorbike extends Vehicle {
         double tax = 0;
         if (enginePower < 100) {
             return 500.0;
-        }else {
+        } else {
             return 1000.0;
         }
     }
