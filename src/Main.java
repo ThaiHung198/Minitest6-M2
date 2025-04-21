@@ -7,6 +7,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         VehicleManager manager = new VehicleManager();
+        manager.addVehicle(new Car("C01","BMW",2021,4));
+        manager.addVehicle(new Car("C02","Mercedes",2024,4));
+        manager.addVehicle(new Car("C03","Porsche",2025,2));
+        manager.addVehicle(new Motorbike("M11","Honda",2024,980));
+        manager.addVehicle(new Motorbike("C12","Yamaha",2023,1000));
+        manager.addVehicle(new Motorbike("C13","BMW",2022,1050));
 
         int choice = -1;
         // khởi tạo lựa chọn ban đầu là giá trị không hợp lệ
